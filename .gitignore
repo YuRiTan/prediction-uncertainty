@@ -1,0 +1,15 @@
+# Python
+ipynb_checkpoints/
+*pyc
+__pycache__/*
+
+# Data
+*.zip
+*.csv
+*.json
+*.pkl
+
+# Folder
+data/
+
+
