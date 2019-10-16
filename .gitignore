@@ -1,13 +1,22 @@
 # Python
 .ipynb_checkpoints
+*.egg-info
 *pyc
 __pycache__/*
+.venv
 
 # Data
 *.zip
 *.csv
 *.json
 *.pkl
+*.png
+*.gif
 
-# Folder
+# data folders
 data/
+figures/
+notebooks/*_plotting.ipynb
+
+# editors/IDE
+.vscode
