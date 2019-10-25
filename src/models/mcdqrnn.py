@@ -41,7 +41,7 @@ class DeepQuantileRegression(nn.Module):
     def mc_predict(self, X, samples=4000):
         with torch.no_grad():
             self.model_.train()
-            preds = torch.stack([self.model_(X) for _ in range(samples)], dim=-1)
+            preds = torch.stack([self.model_(X) for _ in range(samples)], dim=0)
         return preds
     
     def save(self, path, fname):
