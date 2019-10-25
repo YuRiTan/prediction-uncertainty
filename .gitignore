@@ -16,7 +16,10 @@ venv
 # data folders
 data/
 figures/
-notebooks/*_plotting.ipynb
+
+# ignored files
+notebooks/*_plots.ipynb
+temp_*.py
 
 # editors/IDE
 .vscode
