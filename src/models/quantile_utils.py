@@ -31,4 +31,4 @@ def QuantileLoss(preds, target, quantiles):
               for i, q in enumerate(quantiles)]
 
     loss = torch.mean(torch.sum(torch.cat(losses, dim=1), dim=1))
-    return loss 
+    return loss
