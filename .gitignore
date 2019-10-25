@@ -15,6 +15,7 @@ venv
 
 # data folders
 data/
+!src/data/
 figures/
 
 # ignored files
