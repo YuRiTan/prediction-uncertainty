@@ -34,3 +34,16 @@ def generate_dataset(n=500, test_size=.2):
     x, y = x.reshape(-1,1), y.reshape(-1,1)
     split_i = int(n * test_size)
     return x[:-split_i], x[-split_i:], y[:-split_i], y[-split_i:]
+
+
+def generate_sin_shaped_dataset(n=500, test_size=.2):
+    """ Function that generates dummy data in a mirrored sine shape """
+    def _parabolic_sine(x, amplitude=1):
+        noise = amplitude * (np.random.rand(len(x))*2-1)
+        return 8 + x**2/(32) + noise*8*np.sin(x/(4))
+
+    x_min, x_max = 1, 30
+    x = np.random.rand(n) * (x_max - x_min) 
+    x, y = x.reshape(-1,1), _parabolic_sine(x, amplitude=1).reshape(-1,1)
+    split_i = int(n * test_size)
+    return x[:-split_i], x[-split_i:], y[:-split_i], y[-split_i:]
