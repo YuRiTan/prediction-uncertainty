@@ -1,7 +1,7 @@
 import numpy as np
 
 def load_dataset(n=300, n_tst=150):
-    """ source: https://medium.com/tensorflow/regression-with-
+    """ Source: https://medium.com/tensorflow/regression-with-
     probabilistic-layers-in-tensorflow-probability-e46ff5d37baf 
     """
     w0, b0 = 0.125, 5.
