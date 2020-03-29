@@ -4,8 +4,8 @@ pandas
 matplotlib
 seaborn
 scipy
-jupyter
 scikit-learn
+jupyter
 jupyterlab
 pymc3==3.5
 arviz==0.5.1

@@ -1,0 +1,17 @@
+version: '3'
+services:
+  jupyter:
+    hostname: jupyter
+    restart: unless-stopped
+    build: 
+        context: .
+        dockerfile: Dockerfile
+    image: prediction_uncertainty
+    container_name: prediction_uncertainty
+    env_file: .env
+    ports:
+      - "8899:8899"
+    volumes:
+      - ./:/workspace
+    command: /bin/bash /docker-entrypoint.sh
+        

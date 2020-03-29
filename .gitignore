@@ -22,5 +22,8 @@ figures/
 notebooks/*_plots.ipynb
 temp_*.py
 
+# secrets
+.env
+
 # editors/IDE
 .vscode

@@ -1,0 +1,19 @@
+# Hidden files
+.env.app
+.ipynb_checkpoints
+.pyc
+
+# (hidden) Folders
+.git
+*.egg-info
+venv
+
+# Not required during build
+Dockerfile
+docker-compose.yml
+README.md
+data
+notebooks
+figures
+models
+src
