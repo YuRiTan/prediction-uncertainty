@@ -9,6 +9,7 @@ There are basically two options when running this code. Either you run it locall
 Run on local macine:
 - Python 3 (3.7)
 - virtualenv
+
 Run containerized
 - docker
 - docker-compose
