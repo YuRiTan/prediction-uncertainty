@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.7
 
 # Create required folders:
 WORKDIR /pip
@@ -17,5 +17,7 @@ RUN apt-get update && \
 	pip3 install -r /pip/requirements.txt && \
 	pip3 install -e /workspace/. && \
 	apt-get clean && \
-	rm -rf /var/lib/apt/lists/* && \
+    apt-get autoremove && \
+	rm -rf /var/lib/apt/lists/* /tmp/* && \
 	rm /workspace/setup.py
+
