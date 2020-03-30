@@ -4,11 +4,11 @@ PYTHON_INTERPRETER := python3
 IMG_TAG := prediction_uncertainty
 .DEFAULT_GOAL := build
 
-local_venv:
+venv:
 	$(PYTHON_INTERPRETER) -m venv venv
 
 .ONESHELL:
-local_requirements: local_venv
+local_requirements: venv
 	source venv/bin/activate
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
@@ -34,12 +34,9 @@ jupyter:
 		docker-compose up
 	@else
 		@echo 'Container $(IMG_TAG) already running.'
-		@echo 'Run `make clean_docker` first befor starting a new one'
+		@echo 'Run `docker-compose down` first befor starting a new one'
 	@fi
 	# docker run -v $(cwd):/workspace -ti $(IMG_TAG)
-
-clean_local_venv:
-	rm -rf venv
 
 clean_local_build:
 	find . -name "*.py[co]" -delete
@@ -48,10 +45,16 @@ clean_local_build:
 
 clean_docker:
 	docker-compose down
+	docker system prune -f
 
-clean_all: clean_local_build clean_local_venv
+clean: clean_docker clean_local_build 
 	find . -name ".ipynb_checkpoints" -exec rm -rf {} +
 
 flush_docker: clean_docker
+	@echo "Removing image: $(IMG_TAG)"
 	docker images -a | grep $(IMG_TAG) | awk '{print $$3}' | xargs docker rmi
-	docker system prune -f
+
+flush_venv:
+	rm -rf venv
+
+flush_all: flush_docker flush_local
