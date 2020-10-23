@@ -1,4 +1,9 @@
 import numpy as np
+import pandas as pd
+
+from sklearn.datasets import load_boston
+from sklearn.model_selection import train_test_split
+
 
 def load_dataset(n=300, n_tst=150):
     """ Source: https://medium.com/tensorflow/regression-with-
@@ -47,3 +52,16 @@ def generate_sin_shaped_dataset(n=500, test_size=.2):
     x, y = x.reshape(-1,1), _parabolic_sine(x, amplitude=1).reshape(-1,1)
     split_i = int(n * test_size)
     return x[:-split_i], x[-split_i:], y[:-split_i], y[-split_i:]
+
+
+def load_boston_dataset(test_size=0.2, return_df=False):
+    boston = load_boston()
+    # first into df to make sure column names persist
+    df = pd.DataFrame(boston.data, columns=boston.feature_names)
+    df['target'] = boston.target 
+
+    if return_df:
+        return df
+    else:
+        return train_test_split(df.drop('target', axis=1), df.target, 
+                                test_size=test_size)
