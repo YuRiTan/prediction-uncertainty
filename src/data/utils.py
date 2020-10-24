@@ -63,5 +63,8 @@ def load_boston_dataset(test_size=0.2, return_df=False):
     if return_df:
         return df
     else:
-        return train_test_split(df.drop('target', axis=1), df.target, 
-                                test_size=test_size)
+        x_train, x_test, y_train, y_test = train_test_split(
+            df.drop('target', axis=1), df.target, test_size=test_size
+        )
+        return (x_train.values, x_test.values,
+                y_train.values.reshape(-1, 1), y_test.values.reshape(-1, 1))
