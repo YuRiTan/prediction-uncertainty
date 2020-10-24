@@ -1,3 +1,6 @@
-from .mcdqrnn import DeepQuantileRegression, QuantileLoss
-from .blr import BayesianLinearRegression
-from .heteroscedastic_mcdnn import HeteroscedasticDropoutNet, gaussian_nll_loss
+from .mcdropout_nets import (
+    QuantileRegressionMCDropoutNet,
+    HeteroscedasticMCDropoutNet,
+)
+from .bayesian_linear_regression import BayesianLinearRegression
+from .model_trainer import ModelTrainer

@@ -15,11 +15,6 @@ local_requirements: venv
 	$(PYTHON_INTERPRETER) -m pip install -e .[dev]
 
 .ONESHELL:
-dataset: local_requirements
-	source venv/bin/activate
-	$(PYTHON_INTERPRETER) src/data/make_dataset.py
-
-.ONESHELL:
 local_jupyter: 
 	source venv/bin/activate
 	jupyter lab
