@@ -14,9 +14,11 @@ venv
 *.gif
 
 # data folders
+./models/
 data/
 !src/data/
 figures/
+models/
 
 # ignored files
 notebooks/*_plots.ipynb
@@ -27,3 +29,4 @@ temp_*.py
 
 # editors/IDE
 .vscode
+.idea
