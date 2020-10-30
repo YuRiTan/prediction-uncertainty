@@ -14,7 +14,6 @@ venv
 *.gif
 
 # data folders
-./models/
 data/
 !src/data/
 figures/
