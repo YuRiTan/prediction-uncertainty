@@ -3,7 +3,7 @@ import os
 from typing import Dict
 from pathlib import Path
 
-from src.models.abstract_model import AbstractModel
+from src.model.abstract_model import AbstractModel
 
 
 logger = logging.getLogger(__name__)
