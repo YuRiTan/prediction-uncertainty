@@ -7,7 +7,7 @@ import numpy as np
 from sklearn.exceptions import NotFittedError
 from sklearn.preprocessing import MinMaxScaler
 
-from src.models.abstract_model import AbstractModel
+from src.model.abstract_model import AbstractModel
 
 
 logger = logging.getLogger(__name__)

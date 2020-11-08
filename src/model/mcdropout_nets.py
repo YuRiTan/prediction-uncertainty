@@ -10,9 +10,9 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import MinMaxScaler
 
 from src.evaluate.loss_functions import gaussian_nll_loss, QuantileLoss
-from src.models.abstract_model import AbstractModel
-from src.models.dropout_layer import Dropout_on_dim
-from src.models.quantile_utils import get_quantile_pred, create_quantiles
+from src.model.abstract_model import AbstractModel
+from src.model.dropout_layer import Dropout_on_dim
+from src.model.quantile_utils import get_quantile_pred, create_quantiles
 
 logger = logging.getLogger(__name__)
 
