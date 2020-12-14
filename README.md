@@ -1,6 +1,7 @@
 # Code used in blog(s)
 - [A frequentist approach to prediction uncertainty](https://www.yuritan.nl/posts/prediction_uncertainty/)
- - [Prediction uncertainty - part 2](https://www.yuritan.nl/posts/prediction_uncertainty_part_2/)
+- [Prediction uncertainty - part 2](https://www.yuritan.nl/posts/prediction_uncertainty_part_2/)
+- [Uncertainty evaluation - a comparison of different approaches](https://www.yuritan.nl/posts/uncertainty_comparison/)
 
 ## Getting started
 There are basically two options when running this code. Either you run it locally using `Python 3(.7)` and `virtualenv`, or you spin up a docker container which mounts the project in the container. This way you can develop locally while the code is executed inside the docker container.
